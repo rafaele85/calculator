@@ -1,5 +1,10 @@
 # Calculator Front-end
 
+
+Pre-requisites:
+
+node.js v14 or better
+
 ## To start it
 
 
