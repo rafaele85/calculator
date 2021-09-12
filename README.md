@@ -1,4 +1,4 @@
-# Calculator Front-end
+# Calculator
 
 
 Pre-requisites:
