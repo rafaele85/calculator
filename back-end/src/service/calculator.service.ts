@@ -1,6 +1,6 @@
 import {APIParams} from "../types";
 
-const ALLOWED_VALUE_CHARS='01234567890+-*/.'
+const ALLOWED_VALUE_CHARS='01234567890+-*/.e'
 const ALLOWED_KEY_CHARS='01234567890+-*/.=%'
 
 type Expr = {value1: number|undefined, op: string|undefined, value2: number|undefined}

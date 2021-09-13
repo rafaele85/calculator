@@ -43,23 +43,13 @@ const useStyles = makeStyles(() => {
 export const App = () => {
     const [displayValue, setDisplayValue] = useState<string>('0')
     const [isLoading, setLoading] = useState<boolean>(false)
-    const [nextDigitResets, setNextDigitResets] = useState<boolean>(false)
 
     const handleKey = async (key: string) => {
         let value = displayValue
-        if (key >= '0' && key <= '9' && nextDigitResets) {
-            setDisplayValue('')
-            value = ''
-            console.log('digit & nextDigitresets=true - resetting displayValue')
-            setNextDigitResets(false)
-        }
         try {
             setLoading(true)
             const res = await api({displayValue: value, key})
             setLoading(false)
-            if (key === 'Enter' || key === '=' && res.value !== displayValue) {
-                setNextDigitResets(true)
-            }
             setDisplayValue(res.value)
         } catch (err) {
             console.error(err)
